@@ -1,0 +1,33 @@
+{
+  "name": "electron-vite-ts-react-template",
+  "private": true,
+  "version": "0.0.0",
+  "main": "dist/main.js",
+  "scripts": {
+    "dev": "concurrently \"vite\" \"cross-env DEV= tsc-watch -p tsconfig-electron.json --onSuccess \\\"electron .\\\"\"",
+    "preview": "vite build && tsc -p tsconfig-electron.json && cross-env PREVIEW= electron .",
+    "build": "vite build && tsc -p tsconfig-electron.json && electron-forge make"
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.4",
+    "@electron-forge/maker-deb": "^6.0.4",
+    "@electron-forge/maker-rpm": "^6.0.4",
+    "@electron-forge/maker-squirrel": "^6.0.4",
+    "@electron-forge/maker-zip": "^6.0.4",
+    "@types/react": "^18.0.26",
+    "@types/react-dom": "^18.0.9",
+    "@vitejs/plugin-react": "^3.0.0",
+    "concurrently": "^7.6.0",
+    "cross-env": "^7.0.3",
+    "electron": "^22.2.0",
+    "tsc-watch": "^6.0.0",
+    "typescript": "^4.9.3",
+    "vite": "^4.0.0"
+  }
+}
